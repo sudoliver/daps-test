@@ -33,7 +33,7 @@ jobs:
         id: image-tags
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/ids-basecamp/connector
+          images: ghcr.io/ids-basecamp/daps
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             ${{ github.ref_name }}
