@@ -1,16 +1,11 @@
-FROM ruby:3
-ARG omejdn_version="unknown"
+FROM ruby:3.0
 
 WORKDIR /opt
 
-#Rebuild if Gemfile changed
-COPY Gemfile .
-COPY Gemfile.lock .
-RUN bundle install
-RUN echo $omejdn_version > .version
+COPY . /opt
 
-COPY . .
+RUN bundle install
 
 EXPOSE 4567
 
-CMD [ "ruby", "omejdn.rb" ]
+CMD ruby omejdn.rb & sleep 5 && ruby /opt/scripts/create_test_token.rb exampleClient /opt/keys/key.pem
