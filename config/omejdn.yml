@@ -1,0 +1,16 @@
+---
+issuer: http://localhost:4567
+front_url: http://localhost:4567
+bind_to: 0.0.0.0:4567
+environment: development
+openid: false
+default_audience: []
+accept_audience:
+- http://localhost:4567
+- http://localhost:4567/token
+access_token:
+  expiration: 3600
+  algorithm: RS256
+id_token:
+  expiration: 3600
+  algorithm: RS256

@@ -1,0 +1,14 @@
+- client_id: exampleClient
+  client_name: Example Client
+  redirect_uris:
+    - https://example.org/callback
+  grant_types:
+    - authorization_code
+    - client_credentials
+  scope:
+    - openid
+    - omejdn:write
+  token_endpoint_auth_method: private_key_jwt
+  certfile: "/opt/keys/clients/cert.pem"
+  attributes:
+    - example: true
